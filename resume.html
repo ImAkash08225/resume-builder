@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Builder</h1>
+        <form id="resume-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name1" required><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone3" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email2" required><br><br>
+            
+           
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address4" required><br><br>
+            
+            <label for="education">Education:</label>
+            <textarea id="education5" required></textarea><br><br>
+            
+            <label for="experience">Work Experience:</label>
+            <textarea id="experience6" required></textarea><br><br>
+            
+            <label for="skills">Skills:</label>
+            <textarea id="skills7" required></textarea><br><br>
+            
+            <button type="button" class="generate" id="generate">Generate Resume</button>
+        </form>
+        <div id="output"></div>
+    </div>
+    <br>
+
+    <script>
+        const generateButton = document.getElementById('generate');
+        generateButton.addEventListener('click', function () {
+            const name = document.getElementById('name1').value;
+            const email = document.getElementById('email2').value;
+            const phone = document.getElementById('phone3').value;
+            const address = document.getElementById('address4').value;
+            const education = document.getElementById('education5').value;
+            const experience = document.getElementById('experience6').value;
+            const skills = document.getElementById('skills7').value;
+
+            const resumeOutput = document.getElementById('output');
+            resumeOutput.innerHTML = `
+                <h1>${name}</h1>
+                <p>Email: ${email}</p>
+                <p>Phone: ${phone}</p>
+                <p>Address: ${address}</p>
+                <h3>Education</h3>
+                <p>${education}</p>
+                <h3>Work Experience</h3>
+                <p>${experience}</p>
+                <h3>Skills</h3>
+                <p>${skills}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
